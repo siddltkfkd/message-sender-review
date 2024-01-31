@@ -5,7 +5,13 @@ import com.nhnacademy.edu.springframework.sender.MessageSender;
 
 public class MessageSendService {
 	MessageSender messageSender;
+
+	public MessageSendService(){}
 	public MessageSendService(MessageSender messageSender){
+		this.messageSender = messageSender;
+	}
+
+	public void setMessageSender(MessageSender messageSender) {
 		this.messageSender = messageSender;
 	}
 
