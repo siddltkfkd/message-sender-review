@@ -13,8 +13,7 @@ public class Main {
 		String message = "hi";
 
 		try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")){
-			MessageSender messageSender = (MessageSender) context.getBean("smsMessageSender");
-			new MessageSendService(messageSender).doSendMessage(user, message);
+			context.getBean("messageSendService", MessageSendService.class).doSendMessage(user, message);
 		}
 	}
 
