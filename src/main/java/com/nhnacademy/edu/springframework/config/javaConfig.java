@@ -20,6 +20,6 @@ public class javaConfig {
 	}
 	@Bean
 	public MessageSendService messageSendService(){
-		return new MessageSendService();
+		return new MessageSendService(smsMessageSender());
 	}
 }

@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MessageSendService {
-	@Autowired()
-	@Qualifier("smsMessageSender")
 	MessageSender messageSender;
-	public MessageSendService(){}
+	public MessageSendService(MessageSender messageSender){
+		this.messageSender = messageSender;
+	}
 
 	public void doSendMessage(User user, String message){
 		messageSender.sendMessage(user, message);
