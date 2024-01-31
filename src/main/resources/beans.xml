@@ -7,7 +7,7 @@
     <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.sender.SmsMessageSender"/>
     <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.sender.EmailMessageSender"/>
     <bean id="messageSendService" class="com.nhnacademy.edu.springframework.service.MessageSendService">
-        <constructor-arg ref="smsMessageSender"/>
+        <property name="messageSender" ref="smsMessageSender"/>
     </bean>
 
 </beans>
